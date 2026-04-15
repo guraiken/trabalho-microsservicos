@@ -1,0 +1,28 @@
+{
+    "name": "api_gateway",
+    "version": "1.0.0",
+    "description": "API gateway para produtos e pedidos",
+    "main": "src/server.ts",
+    "type": "module",
+    "scripts": {
+        "start": "tsx --watch src/server.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.6",
+        "dotenv": "^17.3.1",
+        "express": "^5.2.1",
+        "http-proxy-middleware": "^3.0.5",
+        "tsx": "^4.21.0"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.19",
+        "@types/express": "^5.0.6",
+       
+        "@types/node": "^25.6.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.3"
+    }
+}
