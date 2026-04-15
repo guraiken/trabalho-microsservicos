@@ -42,7 +42,7 @@ routerProduto.post('/', async (req, res) => {
     }
 })
 
-routerProduto.put('/:id/compra', async (req, res) => {
+routerProduto.post('/:id/compra', async (req, res) => {
     const id = Number(req.params.id)
     const { quantidade } = req.body
 
