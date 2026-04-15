@@ -13,9 +13,10 @@ export class ServicePedido {
     }
 
     async makePedido(data: { produtoId: number; quantidade: number }): Promise<Pedido> {
-        const produtoResponse = await fetch(`http://localhost:3001/produtos/${data.produtoId}`)
+        const produtoResponse = await fetch(`http://localhost:3000/produtos/${data.produtoId}`)
 
         if (!produtoResponse.ok) {
+            console.log(produtoResponse)
             throw new Error('Produto não encontrado na API de produtos')
         }
 
@@ -29,13 +30,15 @@ export class ServicePedido {
             throw new Error('Quantidade deve ser maior que zero')
         }
 
-        const compraResponse = await fetch(`http://localhost:3001/produtos/${data.produtoId}/compra`, {
+        const compraResponse = await fetch(`http://localhost:3000/produtos/${data.produtoId}/compra`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ quantidade: data.quantidade }),
         })
 
         if (!compraResponse.ok) {
+            console.log(compraResponse);
+            
             const errorBody = await compraResponse.json().catch(() => null)
             const message = errorBody?.error || 'Falha ao processar compra na API de produtos'
             throw new Error(message)
@@ -48,6 +51,7 @@ export class ServicePedido {
                 produto: produtoAtualizado.nome,
                 preco: Number(produtoAtualizado.valor),
                 quantidade: data.quantidade,
+                produtoId: data.produtoId
             },
         })
     }

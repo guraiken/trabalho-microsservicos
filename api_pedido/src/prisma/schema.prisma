@@ -21,5 +21,7 @@ model Pedido {
 
   quantidade Int
 
+  produtoId Int
+
   @@map("pedido")
 }

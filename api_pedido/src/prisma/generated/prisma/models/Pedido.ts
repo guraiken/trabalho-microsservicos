@@ -30,12 +30,14 @@ export type PedidoAvgAggregateOutputType = {
   id: number | null
   preco: number | null
   quantidade: number | null
+  produtoId: number | null
 }
 
 export type PedidoSumAggregateOutputType = {
   id: number | null
   preco: number | null
   quantidade: number | null
+  produtoId: number | null
 }
 
 export type PedidoMinAggregateOutputType = {
@@ -43,6 +45,7 @@ export type PedidoMinAggregateOutputType = {
   produto: string | null
   preco: number | null
   quantidade: number | null
+  produtoId: number | null
 }
 
 export type PedidoMaxAggregateOutputType = {
@@ -50,6 +53,7 @@ export type PedidoMaxAggregateOutputType = {
   produto: string | null
   preco: number | null
   quantidade: number | null
+  produtoId: number | null
 }
 
 export type PedidoCountAggregateOutputType = {
@@ -57,6 +61,7 @@ export type PedidoCountAggregateOutputType = {
   produto: number
   preco: number
   quantidade: number
+  produtoId: number
   _all: number
 }
 
@@ -65,12 +70,14 @@ export type PedidoAvgAggregateInputType = {
   id?: true
   preco?: true
   quantidade?: true
+  produtoId?: true
 }
 
 export type PedidoSumAggregateInputType = {
   id?: true
   preco?: true
   quantidade?: true
+  produtoId?: true
 }
 
 export type PedidoMinAggregateInputType = {
@@ -78,6 +85,7 @@ export type PedidoMinAggregateInputType = {
   produto?: true
   preco?: true
   quantidade?: true
+  produtoId?: true
 }
 
 export type PedidoMaxAggregateInputType = {
@@ -85,6 +93,7 @@ export type PedidoMaxAggregateInputType = {
   produto?: true
   preco?: true
   quantidade?: true
+  produtoId?: true
 }
 
 export type PedidoCountAggregateInputType = {
@@ -92,6 +101,7 @@ export type PedidoCountAggregateInputType = {
   produto?: true
   preco?: true
   quantidade?: true
+  produtoId?: true
   _all?: true
 }
 
@@ -186,6 +196,7 @@ export type PedidoGroupByOutputType = {
   produto: string
   preco: number
   quantidade: number
+  produtoId: number
   _count: PedidoCountAggregateOutputType | null
   _avg: PedidoAvgAggregateOutputType | null
   _sum: PedidoSumAggregateOutputType | null
@@ -216,6 +227,7 @@ export type PedidoWhereInput = {
   produto?: Prisma.StringFilter<"Pedido"> | string
   preco?: Prisma.FloatFilter<"Pedido"> | number
   quantidade?: Prisma.IntFilter<"Pedido"> | number
+  produtoId?: Prisma.IntFilter<"Pedido"> | number
 }
 
 export type PedidoOrderByWithRelationInput = {
@@ -223,6 +235,7 @@ export type PedidoOrderByWithRelationInput = {
   produto?: Prisma.SortOrder
   preco?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  produtoId?: Prisma.SortOrder
 }
 
 export type PedidoWhereUniqueInput = Prisma.AtLeast<{
@@ -233,6 +246,7 @@ export type PedidoWhereUniqueInput = Prisma.AtLeast<{
   produto?: Prisma.StringFilter<"Pedido"> | string
   preco?: Prisma.FloatFilter<"Pedido"> | number
   quantidade?: Prisma.IntFilter<"Pedido"> | number
+  produtoId?: Prisma.IntFilter<"Pedido"> | number
 }, "id">
 
 export type PedidoOrderByWithAggregationInput = {
@@ -240,6 +254,7 @@ export type PedidoOrderByWithAggregationInput = {
   produto?: Prisma.SortOrder
   preco?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  produtoId?: Prisma.SortOrder
   _count?: Prisma.PedidoCountOrderByAggregateInput
   _avg?: Prisma.PedidoAvgOrderByAggregateInput
   _max?: Prisma.PedidoMaxOrderByAggregateInput
@@ -255,12 +270,14 @@ export type PedidoScalarWhereWithAggregatesInput = {
   produto?: Prisma.StringWithAggregatesFilter<"Pedido"> | string
   preco?: Prisma.FloatWithAggregatesFilter<"Pedido"> | number
   quantidade?: Prisma.IntWithAggregatesFilter<"Pedido"> | number
+  produtoId?: Prisma.IntWithAggregatesFilter<"Pedido"> | number
 }
 
 export type PedidoCreateInput = {
   produto: string
   preco: number
   quantidade: number
+  produtoId: number
 }
 
 export type PedidoUncheckedCreateInput = {
@@ -268,12 +285,14 @@ export type PedidoUncheckedCreateInput = {
   produto: string
   preco: number
   quantidade: number
+  produtoId: number
 }
 
 export type PedidoUpdateInput = {
   produto?: Prisma.StringFieldUpdateOperationsInput | string
   preco?: Prisma.FloatFieldUpdateOperationsInput | number
   quantidade?: Prisma.IntFieldUpdateOperationsInput | number
+  produtoId?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type PedidoUncheckedUpdateInput = {
@@ -281,6 +300,7 @@ export type PedidoUncheckedUpdateInput = {
   produto?: Prisma.StringFieldUpdateOperationsInput | string
   preco?: Prisma.FloatFieldUpdateOperationsInput | number
   quantidade?: Prisma.IntFieldUpdateOperationsInput | number
+  produtoId?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type PedidoCreateManyInput = {
@@ -288,12 +308,14 @@ export type PedidoCreateManyInput = {
   produto: string
   preco: number
   quantidade: number
+  produtoId: number
 }
 
 export type PedidoUpdateManyMutationInput = {
   produto?: Prisma.StringFieldUpdateOperationsInput | string
   preco?: Prisma.FloatFieldUpdateOperationsInput | number
   quantidade?: Prisma.IntFieldUpdateOperationsInput | number
+  produtoId?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type PedidoUncheckedUpdateManyInput = {
@@ -301,6 +323,7 @@ export type PedidoUncheckedUpdateManyInput = {
   produto?: Prisma.StringFieldUpdateOperationsInput | string
   preco?: Prisma.FloatFieldUpdateOperationsInput | number
   quantidade?: Prisma.IntFieldUpdateOperationsInput | number
+  produtoId?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type PedidoCountOrderByAggregateInput = {
@@ -308,12 +331,14 @@ export type PedidoCountOrderByAggregateInput = {
   produto?: Prisma.SortOrder
   preco?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  produtoId?: Prisma.SortOrder
 }
 
 export type PedidoAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
   preco?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  produtoId?: Prisma.SortOrder
 }
 
 export type PedidoMaxOrderByAggregateInput = {
@@ -321,6 +346,7 @@ export type PedidoMaxOrderByAggregateInput = {
   produto?: Prisma.SortOrder
   preco?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  produtoId?: Prisma.SortOrder
 }
 
 export type PedidoMinOrderByAggregateInput = {
@@ -328,12 +354,14 @@ export type PedidoMinOrderByAggregateInput = {
   produto?: Prisma.SortOrder
   preco?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  produtoId?: Prisma.SortOrder
 }
 
 export type PedidoSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
   preco?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  produtoId?: Prisma.SortOrder
 }
 
 export type StringFieldUpdateOperationsInput = {
@@ -363,6 +391,7 @@ export type PedidoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   produto?: boolean
   preco?: boolean
   quantidade?: boolean
+  produtoId?: boolean
 }, ExtArgs["result"]["pedido"]>
 
 export type PedidoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -370,6 +399,7 @@ export type PedidoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extens
   produto?: boolean
   preco?: boolean
   quantidade?: boolean
+  produtoId?: boolean
 }, ExtArgs["result"]["pedido"]>
 
 export type PedidoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -377,6 +407,7 @@ export type PedidoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
   produto?: boolean
   preco?: boolean
   quantidade?: boolean
+  produtoId?: boolean
 }, ExtArgs["result"]["pedido"]>
 
 export type PedidoSelectScalar = {
@@ -384,9 +415,10 @@ export type PedidoSelectScalar = {
   produto?: boolean
   preco?: boolean
   quantidade?: boolean
+  produtoId?: boolean
 }
 
-export type PedidoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "produto" | "preco" | "quantidade", ExtArgs["result"]["pedido"]>
+export type PedidoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "produto" | "preco" | "quantidade" | "produtoId", ExtArgs["result"]["pedido"]>
 
 export type $PedidoPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Pedido"
@@ -396,6 +428,7 @@ export type $PedidoPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
     produto: string
     preco: number
     quantidade: number
+    produtoId: number
   }, ExtArgs["result"]["pedido"]>
   composites: {}
 }
@@ -823,6 +856,7 @@ export interface PedidoFieldRefs {
   readonly produto: Prisma.FieldRef<"Pedido", 'String'>
   readonly preco: Prisma.FieldRef<"Pedido", 'Float'>
   readonly quantidade: Prisma.FieldRef<"Pedido", 'Int'>
+  readonly produtoId: Prisma.FieldRef<"Pedido", 'Int'>
 }
     
 
