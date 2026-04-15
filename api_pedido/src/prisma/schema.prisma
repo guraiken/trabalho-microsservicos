@@ -12,14 +12,14 @@ datasource db {
   provider = "postgresql"
 }
 
-model Produto {
+model Pedido {
   id Int @id @default(autoincrement())
 
-  nome String
+  produto String
 
-  descricao String
+  preco Float
 
   quantidade Int
 
-  @@map("produto")
+  @@map("pedido")
 }
