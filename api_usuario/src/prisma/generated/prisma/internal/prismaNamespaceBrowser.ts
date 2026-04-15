@@ -74,7 +74,8 @@ export const ProdutoScalarFieldEnum = {
   id: 'id',
   nome: 'nome',
   descricao: 'descricao',
-  quantidade: 'quantidade'
+  quantidade: 'quantidade',
+  valor: 'valor'
 } as const
 
 export type ProdutoScalarFieldEnum = (typeof ProdutoScalarFieldEnum)[keyof typeof ProdutoScalarFieldEnum]

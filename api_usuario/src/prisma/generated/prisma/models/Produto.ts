@@ -29,11 +29,13 @@ export type AggregateProduto = {
 export type ProdutoAvgAggregateOutputType = {
   id: number | null
   quantidade: number | null
+  valor: runtime.Decimal | null
 }
 
 export type ProdutoSumAggregateOutputType = {
   id: number | null
   quantidade: number | null
+  valor: runtime.Decimal | null
 }
 
 export type ProdutoMinAggregateOutputType = {
@@ -41,6 +43,7 @@ export type ProdutoMinAggregateOutputType = {
   nome: string | null
   descricao: string | null
   quantidade: number | null
+  valor: runtime.Decimal | null
 }
 
 export type ProdutoMaxAggregateOutputType = {
@@ -48,6 +51,7 @@ export type ProdutoMaxAggregateOutputType = {
   nome: string | null
   descricao: string | null
   quantidade: number | null
+  valor: runtime.Decimal | null
 }
 
 export type ProdutoCountAggregateOutputType = {
@@ -55,6 +59,7 @@ export type ProdutoCountAggregateOutputType = {
   nome: number
   descricao: number
   quantidade: number
+  valor: number
   _all: number
 }
 
@@ -62,11 +67,13 @@ export type ProdutoCountAggregateOutputType = {
 export type ProdutoAvgAggregateInputType = {
   id?: true
   quantidade?: true
+  valor?: true
 }
 
 export type ProdutoSumAggregateInputType = {
   id?: true
   quantidade?: true
+  valor?: true
 }
 
 export type ProdutoMinAggregateInputType = {
@@ -74,6 +81,7 @@ export type ProdutoMinAggregateInputType = {
   nome?: true
   descricao?: true
   quantidade?: true
+  valor?: true
 }
 
 export type ProdutoMaxAggregateInputType = {
@@ -81,6 +89,7 @@ export type ProdutoMaxAggregateInputType = {
   nome?: true
   descricao?: true
   quantidade?: true
+  valor?: true
 }
 
 export type ProdutoCountAggregateInputType = {
@@ -88,6 +97,7 @@ export type ProdutoCountAggregateInputType = {
   nome?: true
   descricao?: true
   quantidade?: true
+  valor?: true
   _all?: true
 }
 
@@ -182,6 +192,7 @@ export type ProdutoGroupByOutputType = {
   nome: string
   descricao: string
   quantidade: number
+  valor: runtime.Decimal
   _count: ProdutoCountAggregateOutputType | null
   _avg: ProdutoAvgAggregateOutputType | null
   _sum: ProdutoSumAggregateOutputType | null
@@ -212,6 +223,7 @@ export type ProdutoWhereInput = {
   nome?: Prisma.StringFilter<"Produto"> | string
   descricao?: Prisma.StringFilter<"Produto"> | string
   quantidade?: Prisma.IntFilter<"Produto"> | number
+  valor?: Prisma.DecimalFilter<"Produto"> | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ProdutoOrderByWithRelationInput = {
@@ -219,6 +231,7 @@ export type ProdutoOrderByWithRelationInput = {
   nome?: Prisma.SortOrder
   descricao?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  valor?: Prisma.SortOrder
 }
 
 export type ProdutoWhereUniqueInput = Prisma.AtLeast<{
@@ -229,6 +242,7 @@ export type ProdutoWhereUniqueInput = Prisma.AtLeast<{
   nome?: Prisma.StringFilter<"Produto"> | string
   descricao?: Prisma.StringFilter<"Produto"> | string
   quantidade?: Prisma.IntFilter<"Produto"> | number
+  valor?: Prisma.DecimalFilter<"Produto"> | runtime.Decimal | runtime.DecimalJsLike | number | string
 }, "id">
 
 export type ProdutoOrderByWithAggregationInput = {
@@ -236,6 +250,7 @@ export type ProdutoOrderByWithAggregationInput = {
   nome?: Prisma.SortOrder
   descricao?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  valor?: Prisma.SortOrder
   _count?: Prisma.ProdutoCountOrderByAggregateInput
   _avg?: Prisma.ProdutoAvgOrderByAggregateInput
   _max?: Prisma.ProdutoMaxOrderByAggregateInput
@@ -251,12 +266,14 @@ export type ProdutoScalarWhereWithAggregatesInput = {
   nome?: Prisma.StringWithAggregatesFilter<"Produto"> | string
   descricao?: Prisma.StringWithAggregatesFilter<"Produto"> | string
   quantidade?: Prisma.IntWithAggregatesFilter<"Produto"> | number
+  valor?: Prisma.DecimalWithAggregatesFilter<"Produto"> | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ProdutoCreateInput = {
   nome: string
   descricao: string
   quantidade: number
+  valor: runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ProdutoUncheckedCreateInput = {
@@ -264,12 +281,14 @@ export type ProdutoUncheckedCreateInput = {
   nome: string
   descricao: string
   quantidade: number
+  valor: runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ProdutoUpdateInput = {
   nome?: Prisma.StringFieldUpdateOperationsInput | string
   descricao?: Prisma.StringFieldUpdateOperationsInput | string
   quantidade?: Prisma.IntFieldUpdateOperationsInput | number
+  valor?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ProdutoUncheckedUpdateInput = {
@@ -277,6 +296,7 @@ export type ProdutoUncheckedUpdateInput = {
   nome?: Prisma.StringFieldUpdateOperationsInput | string
   descricao?: Prisma.StringFieldUpdateOperationsInput | string
   quantidade?: Prisma.IntFieldUpdateOperationsInput | number
+  valor?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ProdutoCreateManyInput = {
@@ -284,12 +304,14 @@ export type ProdutoCreateManyInput = {
   nome: string
   descricao: string
   quantidade: number
+  valor: runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ProdutoUpdateManyMutationInput = {
   nome?: Prisma.StringFieldUpdateOperationsInput | string
   descricao?: Prisma.StringFieldUpdateOperationsInput | string
   quantidade?: Prisma.IntFieldUpdateOperationsInput | number
+  valor?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ProdutoUncheckedUpdateManyInput = {
@@ -297,6 +319,7 @@ export type ProdutoUncheckedUpdateManyInput = {
   nome?: Prisma.StringFieldUpdateOperationsInput | string
   descricao?: Prisma.StringFieldUpdateOperationsInput | string
   quantidade?: Prisma.IntFieldUpdateOperationsInput | number
+  valor?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ProdutoCountOrderByAggregateInput = {
@@ -304,11 +327,13 @@ export type ProdutoCountOrderByAggregateInput = {
   nome?: Prisma.SortOrder
   descricao?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  valor?: Prisma.SortOrder
 }
 
 export type ProdutoAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  valor?: Prisma.SortOrder
 }
 
 export type ProdutoMaxOrderByAggregateInput = {
@@ -316,6 +341,7 @@ export type ProdutoMaxOrderByAggregateInput = {
   nome?: Prisma.SortOrder
   descricao?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  valor?: Prisma.SortOrder
 }
 
 export type ProdutoMinOrderByAggregateInput = {
@@ -323,11 +349,13 @@ export type ProdutoMinOrderByAggregateInput = {
   nome?: Prisma.SortOrder
   descricao?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  valor?: Prisma.SortOrder
 }
 
 export type ProdutoSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
   quantidade?: Prisma.SortOrder
+  valor?: Prisma.SortOrder
 }
 
 export type StringFieldUpdateOperationsInput = {
@@ -342,6 +370,14 @@ export type IntFieldUpdateOperationsInput = {
   divide?: number
 }
 
+export type DecimalFieldUpdateOperationsInput = {
+  set?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  increment?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  decrement?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  multiply?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  divide?: runtime.Decimal | runtime.DecimalJsLike | number | string
+}
+
 
 
 export type ProdutoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -349,6 +385,7 @@ export type ProdutoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   nome?: boolean
   descricao?: boolean
   quantidade?: boolean
+  valor?: boolean
 }, ExtArgs["result"]["produto"]>
 
 export type ProdutoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -356,6 +393,7 @@ export type ProdutoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   nome?: boolean
   descricao?: boolean
   quantidade?: boolean
+  valor?: boolean
 }, ExtArgs["result"]["produto"]>
 
 export type ProdutoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -363,6 +401,7 @@ export type ProdutoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   nome?: boolean
   descricao?: boolean
   quantidade?: boolean
+  valor?: boolean
 }, ExtArgs["result"]["produto"]>
 
 export type ProdutoSelectScalar = {
@@ -370,9 +409,10 @@ export type ProdutoSelectScalar = {
   nome?: boolean
   descricao?: boolean
   quantidade?: boolean
+  valor?: boolean
 }
 
-export type ProdutoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nome" | "descricao" | "quantidade", ExtArgs["result"]["produto"]>
+export type ProdutoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nome" | "descricao" | "quantidade" | "valor", ExtArgs["result"]["produto"]>
 
 export type $ProdutoPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Produto"
@@ -382,6 +422,7 @@ export type $ProdutoPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     nome: string
     descricao: string
     quantidade: number
+    valor: runtime.Decimal
   }, ExtArgs["result"]["produto"]>
   composites: {}
 }
@@ -809,6 +850,7 @@ export interface ProdutoFieldRefs {
   readonly nome: Prisma.FieldRef<"Produto", 'String'>
   readonly descricao: Prisma.FieldRef<"Produto", 'String'>
   readonly quantidade: Prisma.FieldRef<"Produto", 'Int'>
+  readonly valor: Prisma.FieldRef<"Produto", 'Decimal'>
 }
     
 

@@ -5,7 +5,7 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  output   = "/generated/prisma"
 }
 
 datasource db {
@@ -20,6 +20,8 @@ model Produto {
   descricao String
 
   quantidade Int
+
+  valor Decimal @db.Decimal(10, 2)
 
   @@map("produto")
 }
